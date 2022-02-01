@@ -12,7 +12,6 @@ def solution(clothes):
     if (len(what.keys()) == 1):
         for key in what.keys():
             answer = len(what[key])
-        
     else:
         for key in what.keys():
             a.append(len(what[key]))
