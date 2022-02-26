@@ -3,9 +3,9 @@ def solution(n, times):
     times.sort()
     
     left = 1
-    right = times[len(times) - 1] * n
+    right = times[len(times) - 1] * n #worst time, max*n
     
-    while (left < right):
+    while (left < right): #binary search
         mid = (left + right) // 2; sum_all = 0 #available people
         for t in times:
             sum_all += (mid // t)
@@ -13,7 +13,7 @@ def solution(n, times):
         if sum_all >= n:
             right = mid
         else:
-            left = mid + 1
+            left = mid + 1 #more time
             
     answer = left
     return answer
