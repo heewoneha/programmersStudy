@@ -1,4 +1,4 @@
-def solution(array, commands):
+def solution(array, commands): #K번째수 (정렬)
     answer = []
     
     for i in range(0, len(commands)):
