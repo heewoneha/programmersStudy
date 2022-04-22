@@ -18,11 +18,22 @@ dic = defaultdict(int) #0으로 value 값 세팅
     r = reserve와 s의 차집합이다. r 집합은 퀵정렬한다.)
 - [x] 3/30 ~ 4/3 모의테스트
 > 문제 유출 엄금, 기록 X
----
 - [x] 4/4 ~ 4/5 리뷰기간
-+ 4/6 ~ 4/8 코딩테스트
+- [x] 4/6 ~ 4/8 코딩테스트
 - [x] 4/11 리뷰기간
-+ 4/12 학습기간 (힙, 동적계획법, DFS/BFS)
+- [x] 4/12 학습기간 (힙, 동적계획법, DFS/BFS)
+> [N으로 표현](https://programmers.co.kr/learn/courses/30/lessons/42895) 문제에서, 사칙연산을 할 때 +, * 는 교환법칙이 성립하므로, 중복을 없애주기 위해 set을 사용하는 아이디어가 우선 중요하다. 
+```python
+    for i in range(0, len(sets)): # 코드의 일부분
+        for j in range(0, i):
+            for op1 in sets[j]: # j == ( 1 길이 ~ N-1 길이 )
+                for op2 in sets[i-j-1]: # i-j-1 == ( N-1 길이 ~ 1 길이)
+                    sets[i].add(op1+op2)
+                    sets[i].add(op1-op2)
+                    sets[i].add(op1*op2)
+                    if op2 != 0:
+                        sets[i].add(op1 // op2)
+```
 - [x] 4/13 ~ 4/15 최종테스트
 > 문제 유출 엄금, 기록 X
 - [x] 4/18 ~ 4/19 리뷰기간
