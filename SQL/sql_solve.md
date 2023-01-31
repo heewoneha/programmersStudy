@@ -154,6 +154,43 @@ ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID ASC;
 
 ### 2. SUM, MAX, MIN
 
+- 가장 비싼 상품 구하기
+```sql
+SELECT MAX(PRICE) AS MAX_PRICE
+FROM PRODUCT;
+```
+
+- 가격이 제일 비싼 식품의 정보 출력하기
+```sql
+SELECT *
+FROM FOOD_PRODUCT
+WHERE PRICE = (SELECT MAX(PRICE) AS PRICE FROM FOOD_PRODUCT); /* 서브 쿼리 */
+```
+
+- 최댓값 구하기
+```sql
+SELECT MAX(DATETIME)
+FROM ANIMAL_INS;
+```
+
+- 최솟값 구하기
+```sql
+SELECT MIN(DATETIME)
+FROM ANIMAL_INS;
+```
+
+- 동물 수 구하기
+```sql
+SELECT COUNT(*)
+FROM ANIMAL_INS;
+```
+
+- 중복 제거하기
+```sql
+SELECT COUNT(DISTINCT NAME) /* NULL 제외, 중복 고려 */
+FROM ANIMAL_INS;
+```
+
 ### 3. GROUP BY
 
 ### 4. IS NULL
